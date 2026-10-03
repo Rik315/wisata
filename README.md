@@ -1,6 +1,36 @@
-# 🏛️ Explore Yogyakarta — Web Pariwisata Daerah Istimewa
+# 🏛️ — Web Pariwisata Daerah Istimewa
 
-Portal web informasi pariwisata Daerah Istimewa Yogyakarta yang dikembangkan secara kolaboratif menggunakan **HTML5 semantik**, **CSS3 modern (Design Tokens)**, dan **Modular JavaScript**. Proyek ini dirancang responsif, ramah aksesibilitas (*a11y*), serta terstruktur rapi untuk mempermudah pengerjaan tim.
+Portal web informasi pariwisata yang dikembangkan secara kolaboratif menggunakan **HTML5 semantik**, **CSS3 modern (Design Tokens)**, dan **Modular JavaScript**. Proyek ini dirancang responsif, ramah aksesibilitas (*a11y*), serta terstruktur rapi untuk mempermudah pengerjaan tim.
+
+---
+
+## Cara penginstalan
+``` text
+- Lewat Terminal:
+
+1.Buka terminal atau Git Bash di folder tempat kamu ingin menyimpan proyek.
+
+2.Jalankan perintah berikut:
+git clone https://github.com/Rik315/wisata.git
+
+3.Masuk ke folder proyek yang baru saja terunduh:
+cd wisata
+
+4.Buka langsung di VS Code:
+code .
+
+- Unduh Berkas Zip:
+
+1.Buka tautan repositori di browser: [https://github.com/Rik315/wisata](https://github.com/Rik315/wisata).
+
+2.Klik tombol hijau bertuliskan <> Code di sebelah kanan atas daftar berkas.
+
+3.Pilih opsi Download ZIP.
+
+4.Ekstrak (unzip) berkas yang sudah selesai diunduh.
+
+5.Buka folder hasil ekstrak tersebut menggunakan Text Editor/VS Code.
+```
 
 ---
 
@@ -50,3 +80,5 @@ wisata-project/
 │   └── README.md
 ├── .gitignore
 └── README.md              # Dokumentasi Utama Proyek
+```
+
