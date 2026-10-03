@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjalanan | Destinasi</title>
+    <link rel="stylesheet" href="../core/global.css"/>
+    <link rel="stylesheet" href="destinations.css"/>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="navbar">
+            <a href="../01-homepage/index.html" class="nav-brand">Perjalanan<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="../01-homepage/index.html">Beranda</a></li>
+                <li><a href="destinations.html" class="active">Destinasi</a></li>
+                <li><a href="../04-paket-tur/packages.html">Paket Wisata</a></li>
+                <li><a href="../05-agenda-evant/">Agenda & Event</a></li>
+                <li><a href="../06-tentang-kami/about.html">Tentang Kami</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="dest-hero">
+            <div class="hero-overlay"></div>
+            <div class="dest-hero-content">
+                <span class="badge hero-badge">Eksplorasi Sudut Istimewa</span>
+                <h1 class="page-title">Katalog Destinasi Wisata</h1>
+                <p class="page-subtitle">
+                    Temukan Sudut Terbaik Di Daerah Istimewa Yogyakarta, mulai dari candi bersejarah hingga pesona pantai selatan.
+                </p>
+
+                <form class="search-from" onsubmit="event.preventDefault();">
+                    <input
+                    type="search"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Candi, pantai, goa, atau gunung."
+                    autocomplete="off"
+                    />
+                    <button type="button" class="btn-primary search-btn" id="searchBtn">
+                        Cari...
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Content Utama -->
+
+        <div class="container">
+
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button type="button" class="btn-filter active" data-category="all">Semua Wisata</button>
+                    <button type="button" class="btn-filter" data-category="candi">Candi & Sejarah</button>
+                    <button type="button" class="btn-filter" data-category="alam">Alam & Pegunungan</button>
+                    <button type="button" class="btn-filter" data-category="pantai">Pantai & Pesisir</button>
+                </div>
+            </section>
+
+            <!-- Grid daftar kartu -->
+             <section class="destinasi-grid-section">
+                <div class="destinasi-grid" id="destGrid">
+
+                    <!-- Kartu 1 -->
+                     <article class="card dest-card" data-category="candi">
+                        <img
+                        src=""
+                        alt="Candi prambanan"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Candi & Sejarah</span>
+                            <h3 class="dest-title">Candi Prambanan</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Sleman</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                     <!-- Kartu 2 -->
+                      <article class="card dest-card" data-category="pantai">
+                        <img
+                        src=""
+                        alt="Pantai"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Pantai & Pesisir</span>
+                            <h3 class="dest-title">PIK</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Kepo deh</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                     <!-- Kartu 3 -->
+                      <article class="card dest-card" data-category="alam">
+                        <img
+                        src=""
+                        alt="Candi prambanan"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Candi & Sejarah</span>
+                            <h3 class="dest-title">Candi Prambanan</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Sleman</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                     <!-- kartu 4 -->
+                      <article class="card dest-card" data-category="candi">
+                        <img
+                        src=""
+                        alt="Candi prambanan"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Candi & Sejarah</span>
+                            <h3 class="dest-title">Candi Prambanan</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Sleman</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                     <!-- Kartu 5 -->
+                      <article class="card dest-card" data-category="alam">
+                        <img
+                        src=""
+                        alt="Candi prambanan"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Candi & Sejarah</span>
+                            <h3 class="dest-title">Candi Prambanan</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Sleman</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                     <!-- kartu 6 -->
+                      <article class="card dest-card" data-category="pantai">
+                        <img
+                        src=""
+                        alt="Candi prambanan"
+                        class="dest-thumb"
+                        />
+                        <div class="dest-body">
+                            <span class="badge">Candi & Sejarah</span>
+                            <h3 class="dest-title">Candi Prambanan</h3>
+                            <p class="dest-desc">
+                                Candi Hindu megah abad ke-9 dengan arsitektur ramping menjulang dan relief kisah Ramayana yang memukau.
+                            </p>
+                            <div class="dest-footer">
+                                <span class="dest-location">Sleman</span>
+                                <a href="../03-detail-wisata/detail.html" class="btn-detail">Lihat Detail &rarr;</a>
+                            </div>
+                        </div>
+                     </article>
+
+                </div>
+                 
+                <!-- Pesan jika tidak ada di pencarian -->
+                 <div class="noResult" class="no-result card" style="display: none;">
+                    <h3>Destinasi Tidak Ditemukan</h3>
+                    <p>Coba gunakan kata pencari atau pilih kategori wisata yang tersedia.</p>
+                 </div>
+             </section>
+        </div>
+    </main>
+
+    <!-- footer -->
+     <footer class="main-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Tim Proyek Web Dasar — Explore Yogyakarta. Hak Cipta Dilindungi.</p>
+            <p>Hubungi kami di info@explore-yogyakarta.com</p>
+        </div>
+     </footer>
+
+     <!-- pemangilan js -->
+      <script src="../core/global.js"></script>
+      <script src="filter.js"></script>
+    
+</body>
+</html>

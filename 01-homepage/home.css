@@ -1,0 +1,243 @@
+/* ==========================================================================
+   HOMEPAGE STYLESHEET (01-homepage/home.css)
+   Khusus mengatur tata letak dan komponen halaman Beranda (index.html)
+   ========================================================================== */
+
+/* Pembungkus lebar maksimal konten agar rapi di tengah monitor */
+.container {
+  max-width: 1100px;           /* Lebar maksimal disamakan dengan navbar 1100px */
+  margin: 0 auto;              /* Memposisikan kontainer persis di tengah horizontal */
+  padding: 0 20px;             /* Jarak aman sisi kiri-kanan pada layar HP/tablet */
+}
+
+/* ==========================================================================
+   1. HERO SECTION (Banner Sambutan)
+   ========================================================================== */
+.hero-section {
+  position: relative;          /* Menjadi patokan posisi lapisan overlay di dalamnya */
+  min-height: 520px;           /* Tinggi banner pembuka halaman */
+  display: flex;               /* Mengaktifkan Flexbox untuk memusatkan teks */
+  align-items: center;         /* Menyelaraskan teks tepat di tengah secara vertikal */
+  justify-content: center;     /* Menyelaraskan teks tepat di tengah secara horizontal */
+  text-align: center;          /* Rata tengah semua kalimat di dalam banner */
+  padding: 60px 20px;          /* Jarak dalam atas-bawah */
+  background-image: url("https://images.unsplash.com/photo-1620549146396-9024d914cd99?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;      /* Menyesuaikan gambar agar menutupi seluruh wadah banner */
+  background-position: center; /* Memastikan titik tengah foto selalu terlihat */
+}
+
+/* Lapisan gelap transparan di atas foto agar teks putih tetap tajam terbaca */
+.hero-overlay {
+  position: absolute;          /* Menutupi seluruh bidang hero-section */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 23, 42, 0.7); /* Warna arang gelap dengan transparansi 70% */
+  z-index: 1;                  /* Berada di atas gambar latar */
+}
+
+/* Wadah isi teks hero */
+.hero-content {
+  position: relative;          /* Berada di atas lapisan hitam overlay */
+  z-index: 2;
+  max-width: 780px;            /* Membatasi panjang kalimat agar tidak melebar terlalu jauh */
+}
+
+.hero-badge {
+  background-color: rgba(255, 255, 255, 0.15); /* Latar badge transparan lembut */
+  color: #ffffff;                               /* Teks badge putih */
+  margin-bottom: 16px;                          /* Jarak ke judul besar */
+}
+
+.hero-title {
+  font-size: 2.5rem;           /* Ukuran font judul utama */
+  font-weight: 800;            /* Ketebalan huruf ekstra tebal */
+  color: #ffffff;              /* Putih solid */
+  line-height: 1.25;           /* Jarak antar-baris judul */
+  margin-bottom: 18px;         /* Jarak ke teks deskripsi */
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;          /* Ukuran paragraf yang nyaman dibaca */
+  color: rgba(255, 255, 255, 0.85); /* Putih sedikit pudar */
+  margin-bottom: 30px;         /* Jarak ke baris tombol */
+}
+
+.hero-actions {
+  display: flex;               /* Menata tombol bersisian ke samping */
+  justify-content: center;     /* Menaruh tombol di tengah */
+  gap: 16px;                   /* Jarak antar tombol */
+  flex-wrap: wrap;             /* Tombol turun rapi di layar ponsel sempit */
+}
+
+/* Tombol opsi kedua (Lihat Paket Wisata) */
+.btn-secondary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.12); /* Latar transparan */
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);  /* Garis tepi tipis putih */
+  border-radius: var(--radius-pill);           /* Berbentuk lonjong kapsul */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;   /* Menjadi putih pekat saat disorot */
+  color: var(--text-main);      /* Teks berubah menjadi gelap */
+}
+
+/* ==========================================================================
+   2. STATISTIK RINGKAS
+   ========================================================================== */
+.stats-section {
+  margin-top: -40px;           /* Menarik kartu statistik ke atas menumpuk di atas batas hero */
+  position: relative;
+  z-index: 3;
+  margin-bottom: 60px;
+}
+
+.stats-grid {
+  display: grid;               /* Tata letak kolom kisi modern */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Kolom otomatis responsif */
+  gap: 20px;                   /* Jarak antar kartu statistik */
+}
+
+.stat-card {
+  padding: 24px;               /* Ruang dalam kartu */
+  text-align: center;          /* Teks rata tengah */
+}
+
+.stat-number {
+  font-size: 2.2rem;           /* Ukuran angka besar */
+  color: var(--primary);       /* Aksen warna biru laut */
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   3. DESTINASI UNGGULAN
+   ========================================================================== */
+.featured-section {
+  margin-bottom: 70px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.section-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-sub);
+}
+
+.destinasi-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 3 Kolom kartu sejajar */
+  gap: 24px;
+}
+
+.destination-item {
+  display: flex;
+  flex-direction: column;      /* Susunan vertikal: gambar di atas, teks di bawah */
+}
+
+.dest-thumb {
+  width: 100%;
+  height: 200px;               /* Tinggi proporsional foto thumbnail */
+  object-fit: cover;           /* Memastikan foto tidak gepeng / terdistorsi */
+  display: block;
+}
+
+.dest-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;                /* Memastikan tinggi kartu rata sejajar */
+}
+
+.dest-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 10px 0 8px 0;
+}
+
+.dest-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;                /* Mendorong bagian meta harga/link ke dasar kartu */
+}
+
+.dest-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: var(--border-light);
+  padding-top: 14px;
+}
+
+.dest-loc {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.link-more {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.link-more:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   4. CTA BANNER (Ajakan Aksi Bawah)
+   ========================================================================== */
+.cta-section {
+  padding: 36px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;             /* Otomatis turun baris di perangkat seluler */
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.cta-content h2 {
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.cta-content p {
+  font-size: 0.92rem;
+  color: var(--text-sub);
+}

@@ -1,0 +1,178 @@
+/* ==========================================================================
+   1. ROOT VARIABLES (DESIGN TOKENS)
+   ========================================================================== */
+:root {
+  /* Warna Latar */
+  --bg-page: #f8fafc;               /* Warna abu-abu lembut untuk latar belakang seluruh halaman */
+  --bg-surface: #ffffff;            /* Warna putih solid untuk kartu konten dan navbar */
+
+  /* Warna Teks */
+  --text-main: #0f172a;             /* Warna arang gelap untuk judul agar tajam dan kontras */
+  --text-sub: #475569;              /* Warna abu-abu gelap untuk paragraf dan deskripsi */
+  --text-muted: #94a3b8;            /* Warna abu-abu pudar untuk catatan kaki dan teks kecil */
+
+  /* Warna Aksen */
+  --primary: #0284c7;               /* Warna biru laut utama untuk tombol dan link aktif */
+  --primary-hover: #0369a1;         /* Warna biru lebih gelap saat kursor melintasi tombol */
+  --accent-green: #10b981;          /* Warna hijau untuk badge kategori alam atau tiket murah */
+
+  /* Font */
+  --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; /* Menggunakan font bawaan OS agar cepat dimuat */
+
+  /* Garis Batas & Bayangan */
+  --border-light: 1px solid #e2e8f0;                                     /* Garis tipis 1px abu-abu untuk pemisah antar bagian */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);                           /* Bayangan lembut default agar kartu terlihat melayang tipis */
+  --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.1);                  /* Bayangan lebih tebal saat kartu disorot kursor */
+
+  /* Kelengkungan Sudut */
+  --radius-sm: 6px;                 /* Lengkungan sudut kecil untuk tag atau label */
+  --radius-md: 12px;                /* Lengkungan sudut sedang untuk kotak kartu destinasi */
+  --radius-pill: 999px;             /* Lengkungan penuh lonjong untuk tombol berbentuk kapsul */
+
+  /* Kecepatan Animasi */
+  --transition: all 0.25s ease-in-out; /* Durasi animasi 0.25 detik saat terjadi perubahan hover */
+}
+
+/* ==========================================================================
+   2. RESET DASAR BROWSER
+   ========================================================================== */
+* {
+  margin: 0;                        /* Menghapus jarak luar bawaan dari setiap elemen HTML */
+  padding: 0;                       /* Menghapus jarak dalam bawaan dari setiap elemen HTML */
+  box-sizing: border-box;           /* Menghitung padding dan border ke dalam total lebar elemen agar tata letak tidak jebol */
+}
+
+html {
+  scroll-behavior: smooth;          /* Mengaktifkan efek scroll meluncur halus saat link jangkar (#) diklik */
+}
+
+body {
+  font-family: var(--font-base);    /* Menetapkan keluarga font standar ke seluruh halaman */
+  background-color: var(--bg-page); /* Mengisi warna latar belakang website */
+  color: var(--text-main);          /* Menetapkan warna teks default menjadi arang gelap */
+  line-height: 1.6;                 /* Mengatur jarak spasi vertikal antar baris kalimat agar nyaman dibaca */
+  min-height: 100vh;                /* Memastikan tinggi body minimal setinggi layar monitor (100% viewport height) */
+  overflow-x: hidden;               /* Memotong elemen yang melebar ke kanan agar website tidak bisa digeser ke samping */
+}
+
+/* ==========================================================================
+   3. KOMPONEN KARTU UMUM (.card)
+   ========================================================================== */
+.card {
+  background: var(--bg-surface);    /* Memberi warna latar belakang kartu menjadi putih solid */
+  border: var(--border-light);      /* Memberi garis tepi tipis agar batas kartu terlihat tegas */
+  border-radius: var(--radius-md);  /* Membulatkan keempat sudut kartu sebesar 12px */
+  box-shadow: var(--shadow-sm);      /* Memberi efek bayangan tipis di bagian bawah kartu */
+  transition: var(--transition);     /* Membuat perpindahan kartu saat di-hover bergerak halus */
+  overflow: hidden;                 /* Memotong gambar di dalam kartu agar mengikuti lengkungan border-radius */
+}
+
+.card:hover {
+  transform: translateY(-4px);      /* Mengangkat posisi kartu ke atas setinggi 4 pixel */
+  box-shadow: var(--shadow-hover);   /* Mengubah bayangan menjadi lebih tegas agar terlihat terangkat */
+}
+
+/* ==========================================================================
+   4. TOMBOL & BADGE
+   ========================================================================== */
+.btn-primary {
+  display: inline-block;            /* Mengizinkan tombol diatur lebarnya namun tetap sejajar teks */
+  padding: 10px 20px;               /* Memberi bantalan ruang dalam: 10px atas-bawah, 20px kiri-kanan */
+  background-color: var(--primary); /* Mengisi warna dasar tombol dengan warna biru utama */
+  color: #ffffff;                   /* Mengubah warna teks di dalam tombol menjadi putih murni */
+  font-size: 0.9rem;                /* Menetapkan ukuran teks sedikit di bawah teks paragraf biasa */
+  font-weight: 600;                 /* Membuat ketebalan teks tombol menjadi semi-bold */
+  text-decoration: none;            /* Menghilangkan garis bawah bawaan tag tautan <a> */
+  border-radius: var(--radius-pill);/* Membuat bentuk tombol lonjong memanjang seperti kapsul */
+  border: none;                     /* Menghilangkan garis tepi hitam bawaan elemen <button> */
+  cursor: pointer;                  /* Mengubah kursor panah menjadi ikon jari telunjuk saat disentuh */
+  transition: var(--transition);     /* Mengatur kehalusan perubahan warna saat tombol disorot */
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover); /* Menggelapkan warna biru saat tombol disentuh kursor */
+}
+
+.badge {
+  display: inline-block;            /* Menjaga ukuran badge fleksibel mengikuti panjang teks di dalamnya */
+  padding: 4px 10px;                /* Memberi jarak dalam kecil: 4px atas-bawah, 10px kiri-kanan */
+  font-size: 0.75rem;               /* Menetapkan ukuran huruf kecil untuk label kategori */
+  font-weight: 600;                 /* Membuat teks kategori tebal agar mudah dibaca */
+  border-radius: var(--radius-pill);/* Membuat ujung kiri dan kanan badge melengkung bulat */
+  background-color: #e0f2fe;        /* Memberi warna latar biru sangat muda yang lembut */
+  color: var(--primary);            /* Memberi warna teks biru tua agar kontras di atas latar mudanya */
+}
+
+/* ==========================================================================
+   5. HEADER & NAVBAR GLOBAL
+   ========================================================================== */
+.main-header {
+  position: sticky;                 /* Membuat navbar tetap menempel di atas saat layar digulir */
+  top: 0;                           /* Menentukan posisi menempel tepat di tepi paling atas layar (0px) */
+  z-index: 1000;                    /* Menaruh navbar di tumpukan lapisan teratas agar tidak tertutup gambar */
+  background-color: var(--bg-surface); /* Memberi latar belakang putih solid agar konten di baliknya tertutup rapi */
+  border-bottom: var(--border-light);  /* Memberi garis batas horizontal tipis di bawah navbar */
+  box-shadow: var(--shadow-sm);      /* Menambahkan bayangan halus ke bagian bawah bar navigasi */
+}
+
+.navbar {
+  max-width: 1100px;                /* Membatasi lebar maksimal area menu agar tidak terlalu melebar di monitor besar */
+  margin: 0 auto;                   /* Mengatur posisi wadah navbar agar persis berada di tengah monitor secara horizontal */
+  height: 64px;                     /* Menentukan tinggi tetap navbar sebesar 64 pixel */
+  display: flex;                    /* Mengaktifkan sistem Flexbox untuk mengatur tata letak anak elemen di dalamnya */
+  align-items: center;              /* Menyejajarkan logo dan tautan menu secara lurus vertikal di tengah */
+  justify-content: space-between;   /* Mendorong logo merapat ke kiri dan tautan menu merapat ke kanan */
+  padding: 0 20px;                  /* Memberi jarak aman 20px di sisi kiri dan kanan agar tidak mentok ke pinggir layar */
+}
+
+.nav-brand {
+  font-size: 1.25rem;               /* Menentukan ukuran font logo sedikit lebih besar dari teks menu */
+  font-weight: 700;                 /* Membuat font nama website menjadi sangat tebal (bold) */
+  color: var(--text-main);          /* Menetapkan warna teks logo menjadi arang gelap */
+  text-decoration: none;            /* Menghapus garis bawah pada tautan link logo */
+}
+
+.nav-brand span {
+  color: var(--primary);            /* Memberi warna aksen biru khusus pada karakter tertentu (misal tanda titik pada logo) */
+}
+
+.nav-links {
+  display: flex;                    /* Menyusun daftar item menu <li> agar berjejer ke samping (horizontal) */
+  gap: 24px;                        /* Mengatur jarak pemisah konstan sebesar 24px di antara tiap menu link */
+  list-style: none;                 /* Menghilangkan simbol bulatan hitam (bullet point) bawaan dari tag <ul> */
+}
+
+.nav-links a {
+  text-decoration: none;            /* Menghilangkan garis bawah pada tautan halaman */
+  font-size: 0.95rem;               /* Menentukan ukuran huruf link menu yang proporsional */
+  font-weight: 500;                 /* Menetapkan ketebalan huruf teks menu medium */
+  color: var(--text-sub);           /* Menggunakan warna abu-abu gelap default untuk menu yang belum dipilih */
+  transition: var(--transition);     /* Membuat transisi perubahan warna link menu menjadi mulus */
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);            /* Mengubah warna teks menjadi biru terang saat kursor berada di atasnya atau saat halaman aktif */
+}
+
+/* ==========================================================================
+   6. FOOTER GLOBAL
+   ========================================================================== */
+.main-footer {
+  background-color: var(--bg-surface); /* Menetapkan warna putih solid pada latar belakang footer */
+  border-top: var(--border-light);     /* Memberi garis pemisah horizontal tipis di batas atas footer */
+  padding: 30px 20px;               /* Memberi bantalan ruang: 30px atas-bawah dan 20px kiri-kanan */
+  margin-top: 60px;                 /* Memberi jarak kosong 60px antara bagian akhir konten halaman dengan awal footer */
+}
+
+.footer-content {
+  max-width: 1100px;                /* Membatasi lebar teks footer agar sama lurus dengan lebar area navbar */
+  margin: 0 auto;                   /* Memposisikan blok konten footer persis di tengah horizontal monitor */
+  display: flex;                    /* Mengaktifkan sistem Flexbox untuk membagi tulisan hak cipta dan link tambahan */
+  justify-content: space-between;   /* Mendorong teks hak cipta ke sisi kiri dan tautan navigasi tambahan ke sisi kanan */
+  align-items: center;              /* Meratakan posisi vertikal isi footer tepat di poros tengah */
+  flex-wrap: wrap;                  /* Memindahkan isi ke baris baru secara otomatis jika layar gawai terlalu sempit */
+  gap: 16px;                        /* Memberi jarak pembatas sebesar 16px jika elemen turun ke baris baru */
+  font-size: 0.88rem;               /* Menyetel ukuran teks footer sedikit lebih kecil agar rapi */
+  color: var(--text-muted);         /* Menggunakan warna abu-abu pudar agar tidak mengalihkan perhatian dari konten utama */
+}

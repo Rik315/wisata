@@ -1,0 +1,220 @@
+/* kontainer utama afar lebar seragam dengan navbar */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* hero baner */
+.dest-hero {
+    position: relative;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+    /* Gambar Pemandangan */
+    background-image: url("https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-position: center;
+}
+
+/* lapisan gelap */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.72);
+    z-index: 1;
+}
+
+/* Wadah teks di dalam hero */
+.dest-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.hero-badge {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  margin-bottom: 14px;
+}
+
+.page-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.page-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 26px;
+}
+
+/* ==========================================================================
+   2. FORMULIR PENCARIAN TEKS
+   ========================================================================== */
+.search-form {
+  display: flex;
+  align-items: center;
+  max-width: 520px;
+  margin: 0 auto;
+  background-color: var(--bg-surface);
+  border: var(--border-light);
+  border-radius: var(--radius-pill);
+  padding: 5px 6px 5px 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-btn {
+  padding: 10px 22px;
+}
+
+/* ==========================================================================
+   3. TOMBOL FILTER KATEGORI
+   ========================================================================== */
+.filter-section {
+  margin: 40px 0 30px 0;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-filter {
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: var(--border-light);
+  background-color: var(--bg-surface);
+  color: var(--text-sub);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-filter:hover {
+  background-color: #f1f5f9;
+  color: var(--text-main);
+}
+
+/* Gaya tombol saat kategori sedang aktif terpilih */
+.btn-filter.active {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+  box-shadow: 0 4px 10px rgba(2, 132, 199, 0.3);
+}
+
+/* ==========================================================================
+   4. GRID KARTU DESTINASI (CSS Grid)
+   ========================================================================== */
+.destinasi-grid-section {
+  margin-bottom: 70px;
+}
+
+.destinasi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.dest-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.dest-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.dest-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.dest-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 10px 0 8px 0;
+}
+
+.dest-desc {
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.dest-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: var(--border-light);
+  padding-top: 14px;
+}
+
+.dest-location {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.btn-detail {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.btn-detail:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   5. NOTIFIKASI TIDAK DITEMUKAN
+   ========================================================================== */
+.no-result {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-sub);
+}
+
+.no-result h3 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
