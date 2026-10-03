@@ -1,0 +1,17 @@
+# Berkas sampah sistem operasi (Windows & Mac)
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Pengaturan lokal VS Code (biar setelan laptop kamu gak menimpa setelan teman)
+.vscode/
+*.code-workspace
+
+# Berkas log dan riwayat sementara
+*.log
+*.tmp
+.cache/
+
+# Berkas live-server atau ekstensi lokal
+.live-server/
